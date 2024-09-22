@@ -1,0 +1,128 @@
+:root {
+    /* Definição de variáveis de cores para reutilização */
+    --cor-vermelha: #edb5bd;
+    --cor-verde: #a3dfd9;
+    --cor-azul: #d5e7f7;
+    --cor-cinza-claro: #dfe6ed;
+    --cor-cinza-escuro: #c3cfd9;
+}
+
+body {
+    /* Remove a margem padrão do corpo */
+    margin: 0px;
+
+    /* Define a cor de fundo utilizando uma variável */
+    background-color: var(--cor-cinza-escuro);
+
+    /* Garante que o tamanho do conteúdo respeite as bordas e padding */
+    box-sizing: border-box;
+
+    /* Define o espaçamento interno do body */
+    padding: 5px;
+
+    /* Define a altura do body para ocupar toda a tela */
+    height: 100vh;
+
+    /* Utiliza grid layout para organizar os elementos */
+    display: grid;
+
+    /* Define o espaço entre os itens do grid */
+    gap: 5px;
+
+    /* Define duas colunas, uma menor (0.4fr) e outra maior (1fr) */
+    grid-template-columns: 0.4fr 1fr;
+
+    /* Define três linhas no grid, sendo a primeira e última menores */
+    grid-template-rows: 0.2fr 1fr 0.2fr;
+
+    /* Define as áreas nomeadas no grid */
+    grid-template-areas: 
+      "nomeCabecalho nomeCabecalho"
+      "nomeAolado nomePrincipal"
+      "nomeRodape nomeRodape";
+}
+
+.cabecalho {
+    /* Define a cor de fundo da área do cabeçalho */
+    background-color: var(--cor-cinza-claro);
+
+    /* Associa o cabeçalho à área nomeada no grid */
+    grid-area: nomeCabecalho;
+
+    /* Centraliza o conteúdo horizontal e verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.principal {
+    /* Define a cor de fundo da área principal */
+    background-color: var(--cor-vermelha);
+
+    /* Associa a classe principal à área nomeada no grid */
+    grid-area: nomePrincipal;
+
+    /* Define espaçamento interno */
+    padding: 5px;
+
+    /* Organiza o conteúdo em coluna e centraliza */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /* Define espaço entre os itens internos */
+    gap: 5px;
+}
+
+.aolado {
+    /* Define a cor de fundo da área ao lado */
+    background-color: var(--cor-cinza-claro);
+
+    /* Associa a classe à área nomeada no grid */
+    grid-area: nomeAolado;
+
+    /* Centraliza o conteúdo internamente */
+    display: flex;
+    justify-content: center;
+
+    /* Adiciona espaçamento no topo */
+    padding-top: 20px;
+}
+
+.rodape {
+    /* Define a cor de fundo da área do rodapé */
+    background-color: var(--cor-cinza-claro);
+
+    /* Associa o rodapé à área nomeada no grid */
+    grid-area: nomeRodape;
+
+    /* Centraliza o conteúdo internamente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linha {
+    /* Define a cor de fundo da linha */
+    background-color: var(--cor-azul);
+
+    /* Define o espaçamento interno */
+    padding: 5px;
+
+    /* Permite que o item cresça para ocupar o espaço disponível */
+    flex-grow: 1;
+
+    /* Utiliza flexbox para organizar os itens */
+    display: flex;
+
+    /* Define espaço entre os itens internos */
+    gap: 5px;
+}
+
+.artigo {
+    /* Define a cor de fundo do artigo */
+    background-color: var(--cor-verde);
+
+    /* Permite que o item cresça para ocupar o espaço disponível */
+    flex-grow: 1;
+}
